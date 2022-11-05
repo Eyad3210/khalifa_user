@@ -9,22 +9,24 @@ class Products extends StatelessWidget {
   final String category;
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) => GridView.builder(
-          padding: const EdgeInsets.all(15),
-          itemCount: 12,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            childAspectRatio: constraints.biggest.aspectRatio * 3 / 1.9,
-            mainAxisSpacing: 18,
-            crossAxisSpacing: 15,
-          ),
-          itemBuilder: (context, index) => ProductCard(
-                category: 'eyad',
-                press: () {
-                  Get.to(() => const ProductDetailsPage(),);
-                },
-              )),
+    return Center(
+      child: LayoutBuilder(
+        builder: (context, constraints) => GridView.builder(
+            padding: const EdgeInsets.all(15),
+            itemCount: 12,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              childAspectRatio: constraints.biggest.aspectRatio * 3 / 1.9,
+              mainAxisSpacing: 18,
+              crossAxisSpacing: 15,
+            ),
+            itemBuilder: (context, index) => ProductCard(
+                  category: 'eyad',
+                  press: () {
+                    Get.to(() => const ProductDetailsPage(),);
+                  },
+                )),
+      ),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:khalifa_user/view/screens/productDetails_page/widget/all_details.dart';
 import '../../widgets/custom_icon.dart';
@@ -8,48 +9,60 @@ class ProductDetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
-        body: Stack(
-      children: [
-        buildImage(size),
-        buildIconBack(),
-        AllProductDetails(
-            productCategory: "productCategory",
-            descreption: "descreption",
-            productNumber: 22,
-            productUnit: "productUnit",
-            productPrice: 500000,
-            productName: "productName",
-            size: size,
-            productUnitName: "UnitName")
-      ],
-    ));
+        backgroundColor: Theme.of(context).cardColor,
+        body: Column(
+          children: [
+            buildImage(),
+            const AllProductDetails(
+                productCategory: "productCategory",
+                descreption: "descreption",
+                productNumber: 22,
+                productUnit: "productUnit",
+                productPrice: 500000,
+                productName: "productName",
+                productUnitName: "UnitName")
+          ],
+        ));
   }
 
   Positioned buildIconBack() {
     return Positioned(
-        top: 70,
-        left: 20,
+        top: 70.w,
+        left: 20.w,
         child: GestureDetector(
             onTap: () {
               Get.back();
             },
-            child: const CustomIcon(icon: Icon(Icons.arrow_back))));
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const CustomIcon(
+                  icon: Icon(Icons.arrow_back),
+                ),
+                Container(),
+              ],
+            )));
   }
 
-  Positioned buildImage(Size size) {
-    return Positioned(
-        left: 0,
-        right: 0,
-        child: Container(
-          height: size.height /2.3,
-          width: double.maxFinite,
-          decoration: const BoxDecoration(
-              image: DecorationImage(
-            image: AssetImage('assets/test.jpg'),
-            fit: BoxFit.cover,
-          )),
-        ));
+  Widget buildImage() {
+    return Expanded(
+      flex: 2,
+      child: Stack(
+        children: [
+          Container(
+            decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(20),
+                    bottomRight: Radius.circular(20)),
+                image: DecorationImage(
+                  image: AssetImage('assets/test.jpg'),
+                  fit: BoxFit.fill,
+                )),
+          ),
+          buildIconBack()
+        ],
+      ),
+    );
   }
 }

@@ -12,7 +12,7 @@ class ThemesApp {
       cardColor: Colors.white,
       backgroundColor: Colors.white,
       brightness: Brightness.light,
-      appBarTheme: const AppBarTheme(backgroundColor: mainColor),
+      appBarTheme: const AppBarTheme(backgroundColor: mainColor,centerTitle: true),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor: Colors.white,
           selectedItemColor: mainColor,
@@ -23,7 +23,7 @@ class ThemesApp {
       cardColor: darkColor,
       backgroundColor: darkColor,
       brightness: Brightness.dark,
-      appBarTheme: const AppBarTheme(backgroundColor: darkColor),
+      appBarTheme: const AppBarTheme(backgroundColor: darkColor,centerTitle: true),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor: darkColor,
           selectedItemColor: mainColor,

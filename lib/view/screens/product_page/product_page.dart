@@ -8,18 +8,11 @@ class ProductPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-
     return Scaffold(
       appBar: AppBar(
       title: const Text("category"),
-      centerTitle: true,
-    
-      
     ),
-      body: SizedBox(
-          width: size.width,
-          height: size.height,
-          child: const Products(category: 'eyad')),
+      body: const Products(category: 'eyad'),
     );
   }
 }

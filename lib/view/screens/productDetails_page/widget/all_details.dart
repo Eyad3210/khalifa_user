@@ -13,10 +13,8 @@ class AllProductDetails extends StatelessWidget {
       required this.productUnit,
       required this.productPrice,
       required this.productName,
-      required this.size,
       required this.productUnitName,
       super.key});
-  final Size size;
   final String productName;
   final String productCategory;
   final int productPrice;
@@ -27,22 +25,23 @@ class AllProductDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      top: size.height /2.5 ,
+    Size size = MediaQuery.of(context).size;
+
+    return Expanded(
+      flex: 3,
       child: Container(
-        height: size.height - size.height /6.7,
-        width: size.width,
-        decoration:  BoxDecoration(
-            color: Theme.of(context).cardColor,
-            borderRadius:const  BorderRadius.only(
-                topLeft: Radius.circular(30), topRight: Radius.circular(30))),
+        decoration: BoxDecoration(
+          color: Theme.of(context).cardColor,
+          /*   borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(30), topRight: Radius.circular(30)) */
+        ),
         child: Padding(
           padding: const EdgeInsets.all(20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(
-                height: size.height * 0.08,
+                height: size.height * 0.1,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -55,7 +54,6 @@ class AllProductDetails extends StatelessWidget {
                           fontSize: 20.sp,
                           fontWeight: FontWeight.bold,
                           text: productName,
-                          color: Get.isDarkMode ? Colors.white : Colors.black,
                         ),
                         TextUtils(
                           fontSize: 12.sp,
@@ -95,10 +93,10 @@ class AllProductDetails extends StatelessWidget {
                     TextUtils(
                       fontSize: 15.sp,
                       fontWeight: FontWeight.bold,
-                      text: "description",
+                      text: "description".tr,
                     ),
-                    const SizedBox(
-                      height: 5,
+                    SizedBox(
+                      height: 5.h,
                     ),
                     Expanded(
                       child: Container(
@@ -113,9 +111,6 @@ class AllProductDetails extends StatelessWidget {
                               "egiufhiehfjnfkrnoheuwdkbwudhikwhfkehfjeoekihjoejiefkhewkjfpeujfheihieuufjohi",
                               overflow: TextOverflow.ellipsis,
                               maxLines: 5,
-                              style: TextStyle(
-                               // color: Colors.black38,
-                              ),
                             ),
                           )),
                     ),

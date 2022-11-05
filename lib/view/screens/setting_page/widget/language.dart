@@ -10,6 +10,7 @@ class LanguageWidget extends StatelessWidget {
     var controller = Get.put(MyLocaleController());
     return Container(
       width: 100.w,
+      
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(13),
      

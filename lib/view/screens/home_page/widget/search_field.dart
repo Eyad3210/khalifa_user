@@ -4,6 +4,36 @@ import 'package:khalifa_user/utils/theme.dart';
 
 import '../../../../logic/controllers/product_controller.dart';
 
+class SearchField extends StatelessWidget {
+  const SearchField({
+    Key? key,
+    required this.size,
+  }) : super(key: key);
+
+  final double size;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: size * 0.2,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: Theme.of(context).primaryColor,
+        borderRadius: const BorderRadius.only(
+          bottomLeft: Radius.circular(20),
+          bottomRight: Radius.circular(20),
+        ),
+      ),
+      child: SizedBox(
+        child: Padding(
+          padding: EdgeInsets.only(left: 15, right: 15, top: size * 0.05),
+          child: SearchFormText(),
+        ),
+      ),
+    );
+  }
+}
+
 class SearchFormText extends StatelessWidget {
   SearchFormText({Key? key}) : super(key: key);
 
@@ -37,8 +67,7 @@ class SearchFormText extends StatelessWidget {
                   ),
                 )
               : null,
-          hintText: "Search with name & price",
-          
+          hintText: "searchwithname".tr,
           hintStyle: const TextStyle(
             color: Colors.black45,
             fontSize: 15,

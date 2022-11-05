@@ -6,15 +6,18 @@ class Discounts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-        shrinkWrap: true,
-        separatorBuilder: (context, index) {
-          return const SizedBox(height: 15);
-        },
-        physics: const NeverScrollableScrollPhysics(),
-        itemCount: 5,
-        itemBuilder: (context, index) {
-          return const DiscountCard();
-        });
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 15),
+      child: ListView.separated(
+          shrinkWrap: true,
+          separatorBuilder: (context, index) {
+            return  const SizedBox(height: 15);
+          },
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: 5,
+          itemBuilder: (context, index) {
+            return const DiscountCard();
+          }),
+    );
   }
 }

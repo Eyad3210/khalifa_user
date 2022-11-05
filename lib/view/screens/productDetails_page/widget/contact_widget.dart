@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../widgets/text_utils.dart';
@@ -21,7 +22,7 @@ class ContactWidget extends StatelessWidget {
           TextUtils(
             fontSize: 15.sp,
             fontWeight: FontWeight.normal,
-            text: "contact us",
+            text: "contactus".tr,
           ),
           ElevatedButton.icon(
               style: ElevatedButton.styleFrom(

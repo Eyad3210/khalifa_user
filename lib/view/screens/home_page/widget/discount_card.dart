@@ -12,7 +12,7 @@ class DiscountCard extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      height: size.height * 0.25,
+      height: size.height * 0.3,
       width: size.width,
       margin: const EdgeInsets.only(left: 15, right: 15),
       decoration: BoxDecoration(
@@ -41,7 +41,7 @@ class DiscountCard extends StatelessWidget {
                           image: AssetImage("assets/test.jpg"),
                           fit: BoxFit.cover)),
                 ),
-         /*  */
+                /*  */
               ],
             ),
           ),
@@ -57,30 +57,37 @@ class DiscountCard extends StatelessWidget {
                       fontSize: 15.sp,
                       fontWeight: FontWeight.normal,
                       text: "offer friday sunday monday ",
-                      color: Get.isDarkMode ? mainColor: mainColor,
+                      color: Get.isDarkMode ? mainColor : mainColor,
                     ),
                   ),
-                   TextUtils(
+                  TextUtils(
                     fontSize: 15.sp,
                     fontWeight: FontWeight.bold,
-                    text: "50000 sp",
-                    color: Get.isDarkMode ? Colors.red[400]! : Colors.red[400]!,
+                    text: "50000 "+"syp".tr,
+                    color:
+                      Colors.red[400]!,
                   ),
-                  
                 ],
               ),
             ),
           ),
           Expanded(
             flex: 1,
-            child: Container(
-              alignment: Alignment.topLeft,
-              padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
-              child: TextUtils(
-                fontSize: 13.sp,
-                fontWeight: FontWeight.normal,
-                text: "15 burgr + 15 kubbeh + 17 lahmeh + 2 juneh + dddddddddddddddddddddddddddddddddddddddddddddddddddddddddsdddddddddddddddddddddddddsssss",
-                color: Colors.grey[600]!,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 8,right: 8,),
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: TextUtils(
+                      fontSize: 13.sp,
+                      fontWeight: FontWeight.normal,
+                      text:
+                          "15 جبنة + 15 لحمة+15  كبة ",
+                      color: Colors.grey[600]!,
+                    ),
+                  ),
+                  Container()
+                ],
               ),
             ),
           ),

@@ -1,5 +1,6 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:khalifa_user/logic/controllers/translate_controller.dart';
@@ -12,13 +13,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   await GetStorage.init();
-  runApp(DevicePreview(
-    enabled: true,
-    builder: (context) {
-      return const MyApp();
-    }
-  ));
+  /*  runApp(DevicePreview(
+      enabled: true,
+      builder: (context) {
+        return const MyApp();
+      }));
+  */
+      runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {

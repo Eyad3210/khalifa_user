@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:khalifa_user/view/screens/home_page/widget/categories.dart';
 import 'package:khalifa_user/view/screens/home_page/widget/discounts.dart';
 import 'package:khalifa_user/view/screens/home_page/widget/search_field.dart';
@@ -18,19 +19,19 @@ class HomePage extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             SearchField(size: size),
-             SizedBox(
+            SizedBox(
               height: 20.sp,
             ),
-            categoriesText(),
-             SizedBox(
+            myText("categories"),
+            SizedBox(
               height: 20.sp,
             ),
-            SizedBox(height: size * 0.15, child: const Categories()),
+            SizedBox(height: size * 0.2, child: const Categories()),
             const SizedBox(
               height: 20,
             ),
-            offersText(),
-             SizedBox(
+            myText("offers"),
+            SizedBox(
               height: 20.sp,
             ),
             const Discounts(),
@@ -40,65 +41,21 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Padding offersText() {
+  Padding myText(String text) {
     return Padding(
-            padding: const EdgeInsets.only(left: 15),
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: TextUtils(
-                fontSize: 15.sp,
-                fontWeight: FontWeight.w500,
-                text: "Offers",
-              ),
-            ),
-          );
-  }
-
-  Padding categoriesText() {
-    return Padding(
-            padding: const EdgeInsets.only(left: 15),
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: TextUtils(
-                fontSize: 15.sp,
-                fontWeight: FontWeight.w500,
-                text: "Categories",
-              ),
-            ),
-          );
-  }
-}
-
-class SearchField extends StatelessWidget {
-  const SearchField({
-    Key? key,
-    required this.size,
-  }) : super(key: key);
-
-  final double size;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: size * 0.15,
-      child: Container(
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: Theme.of(context).primaryColor,
-          borderRadius: const BorderRadius.only(
-            bottomLeft: Radius.circular(20),
-            bottomRight: Radius.circular(20),
+      padding: const EdgeInsets.only(left: 15, right: 15),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          TextUtils(
+            fontSize: 15.sp,
+            fontWeight: FontWeight.w500,
+            text: text.tr,
           ),
-        ),
-        child: Padding(
-          padding:  EdgeInsets.only(
-            left: 15,
-            right: 15,
-            top: size*0.03
-          ),
-          child: SearchFormText(),
-        ),
+          Container(),
+        ],
       ),
     );
   }
 }
+
