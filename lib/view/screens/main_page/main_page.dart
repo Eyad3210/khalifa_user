@@ -43,26 +43,26 @@ class MainPage extends StatelessWidget {
               currentIndex: controller.currentIndex.value,
               type: BottomNavigationBarType.fixed,
 
-              items: const [
+              items:  [
                 BottomNavigationBarItem(
-                  activeIcon: Icon(
+                  activeIcon:const Icon(
                     Icons.home,
                   ),
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.home,
                   ),
-                  label: 'Home',
+                  label: 'home'.tr,
                   
                 ),
                 BottomNavigationBarItem(
 
-                  activeIcon: Icon(
+                  activeIcon: const Icon(
                     Icons.settings,
                   ),
-                  icon: Icon(
+                  icon:const  Icon(
                     Icons.settings,
                   ),
-                  label: 'Setting',
+                  label: 'setting'.tr,
                   
                 ),
                
