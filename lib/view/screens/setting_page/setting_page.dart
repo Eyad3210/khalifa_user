@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:khalifa_user/view/screens/setting_page/widget/contact_setting.dart';
 import 'package:khalifa_user/view/screens/setting_page/widget/language.dart';
 import 'package:khalifa_user/view/screens/setting_page/widget/list_tile.dart';
@@ -15,17 +16,17 @@ class SettingPage extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
-            const SettingListTile(
+            SettingListTile(
                 icon: Icons.dark_mode,
                 color: Colors.red,
-                title: "Dark mode",
-                widget: SwitchThemeWidget()),
+                title: "darkmode".tr,
+                widget: const SwitchThemeWidget()),
             SizedBox(height: size.height * 0.02),
-            const SettingListTile(
+            SettingListTile(
                 icon: Icons.language,
                 color: Colors.blue,
-                title: "Language",
-                widget: LanguageWidget()),
+                title: "language".tr,
+                widget: const LanguageWidget()),
             SizedBox(height: size.height * 0.02),
             const Divider(
               thickness: 1,
