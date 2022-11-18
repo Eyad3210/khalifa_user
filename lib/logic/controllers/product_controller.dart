@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../models/product_model.dart';
+import '../../data/models/product_model.dart';
+
 
 class ProductController extends GetxController {
   var productList = <ProductModel>[].obs;
-  var favouritesList = <ProductModel>[].obs;
   var isLoading = true.obs;
 
   //search
