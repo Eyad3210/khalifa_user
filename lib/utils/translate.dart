@@ -19,7 +19,8 @@ class MyLocale implements Translations {
           "english": "الانكليزية",
           "arabic": "العربية",
           "searchwithname": "بحث حسب الاسم",
-          "videos": "مقاطع فيديو"
+          "videos": "مقاطع فيديو",
+          "khalifa": "محلات خليفة"
         },
         "en": {
           "categories": "Categories",
@@ -37,7 +38,8 @@ class MyLocale implements Translations {
           "english": "English",
           "arabic": "Arabic",
           "searchwithname": "Search with name",
-          "videos": "Videos"
+          "videos": "Videos",
+          "khalifa": "Khalifa Stores"
         }
       };
 }
